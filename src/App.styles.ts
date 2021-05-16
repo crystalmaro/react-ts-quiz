@@ -31,7 +31,7 @@ export const Wrapper = styled.div`
     font-size: 2rem;
     margin: 0;
   }
-  h1 {
+  h4 {
     font-family: 'Catamaran', sans-serif;
     background-image: linear-gradient(180deg, #fff, #87f1ff);
     font-weight: 400;
@@ -58,5 +58,9 @@ export const Wrapper = styled.div`
   }
   .start {
     max-width: 200px;
+  }
+  select {
+    cursor: pointer;
+    margin-top: 15px;
   }
 `;

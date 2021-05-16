@@ -20,14 +20,15 @@ export enum Difficulty {
 
 export const fetchQuizQuestions = async (
   amount: number,
-  difficulty: Difficulty
+  difficulty: Difficulty,
+  category: number
   // return type is a Promise
 ) => {
-  const endpoint = `https://opentdb.com/api.php?amount=${amount}&difficulty=${difficulty}&type=multiple`;
-  
-  // why double await?
-  // first await the fetch itself
-  // then await when convert response to JSON
+  const endpoint = `https://opentdb.com/api.php?amount=${amount}&difficulty=${difficulty}&type=multiple&category=${category}`;
+  console.log(category)
+  // why double await:
+  // 1. first await the fetch itself
+  // 2. then await when convert response to JSON
   const data = await (await fetch(endpoint)).json();
   // map through all and add the property, answers: string[] from line 12
   return data.results.map((question: Question) => ({
