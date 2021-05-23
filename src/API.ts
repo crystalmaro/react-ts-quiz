@@ -25,7 +25,6 @@ export const fetchQuizQuestions = async (
   // return type is a Promise
 ) => {
   const endpoint = `https://opentdb.com/api.php?amount=${amount}&difficulty=${difficulty}&type=multiple&category=${category}`;
-  console.log(category)
   // why double await:
   // 1. first await the fetch itself
   // 2. then await when convert response to JSON
